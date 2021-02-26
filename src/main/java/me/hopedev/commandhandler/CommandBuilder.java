@@ -9,8 +9,6 @@ public class CommandBuilder {
     private final ArrayList<Command> commands = new ArrayList<>();
     private final String commandPrefix;
     private final DiscordApi api;
-    private CommandExecutor helpCommand;
-    private String helpCommandTrigger = "help";
 
 
     public CommandBuilder(String commandPrefix, DiscordApi api) {
@@ -23,21 +21,8 @@ public class CommandBuilder {
         this.api = api;
     }
 
-    public final CommandBuilder setHelpCommand(String helpCommand, CommandExecutor helpCommandExecutor) {
-        this.helpCommandTrigger = helpCommand;
-        this.helpCommand = helpCommandExecutor;
-        return this;
-    }
-
-    public final CommandBuilder setHelpCommand(String command) {
-        this.helpCommandTrigger = command;
-        this.helpCommand = new DefaultHelpCommandExecutor();
-        return this;
-    }
-
-
-    public final CommandBuilder addCommand(String commandString, CommandExecutor executor) {
-        Command command = new Command(commandString, executor, this.api, this.commandPrefix);
+    public final CommandBuilder addCommand(String commandString, CommandExecutor executor, String description) {
+        Command command = new Command(commandString, executor, this.api, this.commandPrefix, description);
         this.commands.add(command);
         return this;
     }
@@ -46,7 +31,8 @@ public class CommandBuilder {
         this.commands.forEach(command -> this.api.addMessageCreateListener(new CommandHandler(command, this.commands)));
 
         // Help command
-        this.api.addMessageCreateListener(new CommandHandler(new Command(helpCommandTrigger, this.helpCommand, this.api, this.commandPrefix), this.commands));
+        // gone, reduced to atoms
+        // this.api.addMessageCreateListener(new CommandHandler(new Command(helpCommandTrigger, this.helpCommand, this.api, this.commandPrefix), this.commands));
 
     }
 
