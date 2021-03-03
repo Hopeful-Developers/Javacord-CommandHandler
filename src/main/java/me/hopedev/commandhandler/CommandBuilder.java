@@ -22,7 +22,7 @@ public class CommandBuilder {
         this.api = api;
     }
 
-    public final CommandBuilder addCommand(String commandString, CommandExecutor executor, @Nullable String description, @Nullable String usage) {
+    public final CommandBuilder addCommand(String commandString, CommandExecutor executor, String description, String usage) {
         Command command = new Command(commandString, executor, this.api, this.commandPrefix, description == null ? "No description" : description, usage == null ? "No usage" : usage);
         this.commands.add(command);
         return this;
