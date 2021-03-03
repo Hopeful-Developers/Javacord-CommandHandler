@@ -21,6 +21,8 @@ public class CommandHandler implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
 
+        // ignore bot
+        if (event.getMessageAuthor().isYourself()) { return; }
 
         this.event = event;
         CommandData data = new CommandData(event.getApi(), event, this, this.command);

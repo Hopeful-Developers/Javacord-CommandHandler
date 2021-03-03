@@ -1,6 +1,7 @@
 package me.hopedev.commandhandler;
 
 import org.javacord.api.DiscordApi;
+import org.javacord.api.entity.channel.ServerTextChannel;
 import org.javacord.api.entity.message.MessageAuthor;
 import org.javacord.api.event.message.MessageCreateEvent;
 
@@ -38,6 +39,10 @@ public class CommandData {
 
     public final CommandMessage getCommandMessage() {
         return new CommandMessage(this.getEvent().getMessageContent(), this.command.getPrefix());
+    }
+
+    public final ServerTextChannel getChannel() {
+        return this.getEvent().getServerTextChannel().get();
     }
 
 

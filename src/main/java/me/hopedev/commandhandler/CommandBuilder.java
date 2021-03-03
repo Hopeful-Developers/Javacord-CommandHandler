@@ -1,5 +1,6 @@
 package me.hopedev.commandhandler;
 
+import com.sun.istack.internal.Nullable;
 import org.javacord.api.DiscordApi;
 
 import java.util.ArrayList;
@@ -21,8 +22,8 @@ public class CommandBuilder {
         this.api = api;
     }
 
-    public final CommandBuilder addCommand(String commandString, CommandExecutor executor, String description) {
-        Command command = new Command(commandString, executor, this.api, this.commandPrefix, description);
+    public final CommandBuilder addCommand(String commandString, CommandExecutor executor, @Nullable String description, @Nullable String usage) {
+        Command command = new Command(commandString, executor, this.api, this.commandPrefix, description == null ? "No description" : description, usage == null ? "No usage" : usage);
         this.commands.add(command);
         return this;
     }
