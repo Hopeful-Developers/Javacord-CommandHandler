@@ -29,7 +29,7 @@ public class CommandHandler implements MessageCreateListener {
         CommandMessage message = new CommandMessage(event.getMessageContent(), this.command.getPrefix());
 
         if (message.getCaller().equalsIgnoreCase(this.command.getCommand())) {
-            if (message.getPrefix().equalsIgnoreCase(this.command.getPrefix())) {
+            if (event.getMessageContent().startsWith(message.getPrefix())) {
                 this.command.getExecutor().execute(data, this.commands);
             }
         }
