@@ -4,6 +4,7 @@ import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CommandHandler implements MessageCreateListener {
 
@@ -28,7 +29,7 @@ public class CommandHandler implements MessageCreateListener {
         CommandData data = new CommandData(event.getApi(), event, this, this.command);
         CommandMessage message = new CommandMessage(event.getMessageContent(), this.command.getPrefix());
 
-        if (message.getCaller().equalsIgnoreCase(this.command.getCommand())) {
+        if (message.getCaller().equalsIgnoreCase(this.command.getCommand()) || Arrays.stream(this.command.getAliases()).anyMatch(s -> s.equalsIgnoreCase(message.getCaller()))) {
             if (event.getMessageContent().startsWith(message.getPrefix())) {
                 this.command.getExecutor().execute(data, this.commands);
             }
