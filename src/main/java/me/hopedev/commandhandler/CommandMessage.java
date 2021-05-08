@@ -11,7 +11,7 @@ public class CommandMessage {
 
     public CommandMessage(String commandMessage, String prefix) {
         this.prefix = prefix;
-        commandMessage = commandMessage.replace(prefix, "");
+        commandMessage = commandMessage.substring(prefix.length());
         Arrays.stream(commandMessage.split(" ")).iterator().forEachRemaining(args::add);
         caller = args.get(0);
         args.remove(0);
