@@ -14,9 +14,9 @@
   <version>1.0.0</version>
 
   <scm>
-    <connection>scm:git:git@github.com:DAflamingFOX/Javacord-CommandHandler</connection>
-    <developerConnection>scm:git:git@github.com:DAflamingFOX/Javacord-CommandHandler</developerConnection>
-    <url>https://github.com/DAflamingFOX.Javacord-CommandHandler</url>
+    <connection>scm:git:git@github.com:DAflamingFOX/Javacord-CommandHandler.git</connection>
+    <developerConnection>scm:git:git@github.com:DAflamingFOX/Javacord-CommandHandler.git</developerConnection>
+    <url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
     <tag>javacord-commandhandler-1.0.0</tag>
   </scm>
 
