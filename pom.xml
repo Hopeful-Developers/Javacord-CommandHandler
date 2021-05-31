@@ -17,13 +17,13 @@
     <archtype.encoding>@{encoding}</archtype.encoding>
   </properties>
 
-
-  <scm>
-    <connection>scm:git:ssh://git@github.com/DAflamingFOX/Javacord-CommandHandler.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/DAflamingFOX/Javacord-CommandHandler.git</developerConnection>
-    <url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
-    <tag>1.0.2</tag>
-  </scm>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>Javacord CommandHandler</name>
+      <url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
+    </repository>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -35,41 +35,6 @@
 
   <build>
       <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
-                <configuration>
-                    <goals>pre-integration-test</goals>
-                    <preparationGoals>package</preparationGoals>
-                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
-                    <tagNameFormat>@{project.version}</tagNameFormat>
-                    <remoteTagging>false</remoteTagging>
-                </configuration>
-            </plugin>
       </plugins>
   </build>
 </project>
