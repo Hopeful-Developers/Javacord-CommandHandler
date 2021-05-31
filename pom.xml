@@ -21,9 +21,25 @@
     <repository>
       <id>github</id>
       <name>Javacord CommandHandler</name>
-      <url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
+      <url>https://github.com/DAflamingFOX/Javacord-CommandHandler.git</url>
+      <layout>default</layout>
     </repository>
   </distributionManagement>
+  <developers>
+      <developer>
+          <name>Jeffrey Morris</name>
+          <email>daflamingdevelopment@gmail.com</email>
+          <organization>com.github.daflamingdevelopment</organization>
+          <organizationUrl>https://github.com/DAflamingDevelopment/</organizationUrl>
+      </developer>
+  </developers>
+
+  <scm>
+      <connection>scm:git:git://github.com/DAflamingFOX/Javacord-CommandHandler.git</connection>
+      <developerConnection>scm:git:https//github.com/DAflamingFOX/Javacord-CommandHandler.git</developerConnection>
+      <url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
+      <tag>@{project.version}</tag>
+  </scm>
 
   <dependencies>
     <dependency>
