@@ -5,7 +5,7 @@
 
   <groupId>io.github.daflamingfox</groupId>
   <artifactId>javacord-commandhandler</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.2-SNAPSHOT</version>
   
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
@@ -19,10 +19,10 @@
 
 
   <scm>
-    <connection>scm:git:ssh://git@github.com:DAflamingFOX/Javacord-CommandHandler.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:DAflamingFOX/Javacord-CommandHandler.git</developerConnection>
+    <connection>scm:git:ssh://git@github.com/DAflamingFOX/Javacord-CommandHandler.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/DAflamingFOX/Javacord-CommandHandler.git</developerConnection>
     <url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
-    <tag>1.0.2</tag>
+    <tag>@{project.version}</tag>
   </scm>
 
   <dependencies>
