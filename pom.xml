@@ -26,6 +26,11 @@
       <artifactId>javacord-api</artifactId>
       <version>3.3.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.maven.scm</groupId>
+      <artifactId>maven-scm-api</artifactId>
+      <version>1.11.2</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -57,7 +62,7 @@
                     <preparationGoals>package</preparationGoals>
                     <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                     <tagNameFormat>@{project.version}</tagNameFormat>
-                    <remoteTagging>false</remoteTagging>
+                    <!--<remoteTagging>false</remoteTagging>-->
                 </configuration>
             </plugin>
       </plugins>
