@@ -11,7 +11,7 @@
 
   <groupId>io.github.daflamingfox</groupId>   <!-- The website of where it would be hosting in reverse order -->
   <artifactId>javacord-commandhandler</artifactId>   <!-- Name of project -->
-  <version>1.0.1</version>
+  <version>1.0.1-SNAPSHOT</version>
 
   <scm>
     <connection>scm:git:git@github.com:DAflamingFOX/Javacord-CommandHandler.git</connection>
