@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <groupId>io.github.daflamingfox</groupId>   <!-- The website of where it would be hosting in reverse order -->
+  <artifactId>javacord-commandhandler</artifactId>   <!-- Name of project -->
+  <version>1.0</version>
+
+  <name>javacord-commandhandler</name> <!-- Name of project, same as artifactId -->
+  <url>https://daflamingfox.github.io/javacord-commandhandler</url>   <!-- Website of where it is hosted (github pages) -->
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.javacord</groupId>
+      <artifactId>javacord-api</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+	
+  </dependencies>
+
+  <build>
+      <plugins>
+        <!-- Default maven plugins removed, so newest will be used, if specific is needed, simply add that version to plugins -->
+      </plugins>
+  </build>
+</project>
