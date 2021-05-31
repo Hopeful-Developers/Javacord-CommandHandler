@@ -1,1 +1,10 @@
-/src/main/java/me/hopedev/commandhandler/testrun/
+src/main/java/io/github/daflamingfox/Main.java
+src/main/java/io/github/daflamingfox/Ping.java
+target/
+.classpath
+.project
+.settings/org.eclipse.buildship.core.prefs
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.apt.core.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs
