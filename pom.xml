@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.daflamingfox</groupId>
-  <artifactId>javacord-commandhandler</artifactId>
+  <artifactId>Javacord-CommandHandler</artifactId>
   <version>1.0.2</version>
   
   <properties>
