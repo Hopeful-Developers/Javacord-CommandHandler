@@ -5,7 +5,7 @@
 
 	<groupId>io.github.daflamingfox</groupId>
 	<artifactId>Javacord-CommandHandler</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -39,7 +39,8 @@
 		<url>https://github.com/DAflamingFOX/Javacord-CommandHandler</url>
 		<connection>scm:git:git://github.com/DAflamingFOX/Javacord-CommandHandler.git</connection>
 		<developerConnection>scm:git:git@github.com:DAflamingFOX/Javacord-CommandHandler.git</developerConnection>
-	</scm>
+	  <tag>Javacord-CommandHandler-1.0.3</tag>
+  </scm>
 
 	<dependencies>
 		<dependency>
