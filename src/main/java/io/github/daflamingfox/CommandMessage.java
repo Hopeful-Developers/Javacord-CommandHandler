@@ -51,7 +51,7 @@ public class CommandMessage {
 
     /**
      * 
-     * @return The ArrayList<String> of args.
+     * @return The ArrayList&lt;String&gt; of args.
      */
     public final ArrayList<String> getArgs() {
         return this.args;

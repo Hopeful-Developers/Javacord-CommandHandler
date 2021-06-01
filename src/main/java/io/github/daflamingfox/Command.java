@@ -25,9 +25,9 @@ public class Command {
      * @param api Your bots DiscordApi. 
      * @param prefix The prefix that will come before the initiator to call the command <blockquote><pre> "-" </pre></blockquote>
      * @param description A description of what the command does. <blockquote><pre> "shows the bots current delay in ms." </pre></blockquote>
-     * @param usage An example of how to use the command, in general {@code <>} mean a required item, {@code []} means an optional item, and {@code ()} is info. <blockquote><pre> "-tip <@user> [amount (default 1)]" </pre></blockquote>
+     * @param usage An example of how to use the command, in general {@code &lt;&gt;} mean a required item, {@code []} means an optional item, and {@code ()} is info. <blockquote><pre> "-tip &lt;@user&gt; [amount (default 1)]" </pre></blockquote>
      * @author Aurel Ballin
-     * @see {@link IExecutor}
+     * @see io.github.daflamingfox.IExecutor
      */
     public Command(final String commandInitiator, final String[] aliases, final IExecutor executor, final DiscordApi api, final String prefix, final String description, final String usage) {
         this.api = api;

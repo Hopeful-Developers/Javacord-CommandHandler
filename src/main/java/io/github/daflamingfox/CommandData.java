@@ -105,6 +105,7 @@ public class CommandData {
     /**
      * 
      * @param eb an EmbedBuilder to send as a reply to the message that invocated the command. <blockquote><pre> new EmbedBuilder().setTitle("I am responding to your invocation.") </pre></blockquote>
+     * @return The Message that is sent by the bot.
      * @author Aurel Ballin
      * @author Jeffrey Morris
      */
@@ -115,6 +116,7 @@ public class CommandData {
     /**
      * 
      * @param message The message to send as a reply to the message that invocated the command. <blockquote><pre> "I am responding to your invocation." </pre></blockquote>
+     * @return The Message that is sent by the bot.
      * @author Aurel Ballin
      * @author Jeffrey Morris
      */

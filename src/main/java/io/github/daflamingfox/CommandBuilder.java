@@ -41,10 +41,10 @@ public class CommandBuilder {
      * @param aliases A static array of other names that can be used to call the command. <blockquote><pre> new String[] {"delay", "beep", "time"} </pre></blockquote>
      * @param executor The IExecutor that will be executed when the command is called. <blockquote><pre> new Ping() </pre></blockquote>
      * @param description A description of what the command does. If set to null, the description will be set to {@code No description} <blockquote><pre> "shows the bots current delay in ms." </pre></blockquote>
-     * @param usage An example of how to use the command, in general {@code <>} mean a required item, {@code []} means an optional item, and {@code ()} is info. If set to null, the usage will be set to {@code No usage} <blockquote><pre> "-tip <@user> [amount (default 1)]" </pre></blockquote>
+     * @param usage An example of how to use the command, in general {@code &lt;&gt;} mean a required item, {@code []} means an optional item, and {@code ()} is info. If set to null, the usage will be set to {@code No usage} <blockquote><pre> "-tip &lt;@user&gt; [amount (default 1)]" </pre></blockquote>
      * @return itself so that commands can be stacked or built off of one line.
      * @author Aurel Ballin
-     * @see {@link IExecutor}
+     * @see io.github.daflamingfox.IExecutor
      */
     public final CommandBuilder addCommand(String commandInitiator, String[] aliases, IExecutor executor, String description, String usage) {
         Command command = new Command(commandInitiator, aliases, executor, this.api, this.prefix, description == null ? "No description" : description, usage == null ? "No usage" : usage);
@@ -57,7 +57,7 @@ public class CommandBuilder {
      * @param command the Command to add to the builder
      * @return itself so that commands can be stacked or built off of one line.
      * @author Jeffrey Morris
-     * @see {@link Command}
+     * @see io.github.daflamingfox.Command
      */
     public final CommandBuilder addCommand(Command command) {
         this.commands.add(command);

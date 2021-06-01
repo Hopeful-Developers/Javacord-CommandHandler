@@ -15,7 +15,7 @@ public class CommandHandler implements MessageCreateListener {
     /**
      * Creates a commandHandler object.
      * @param command The command to be handled.
-     * @param commands The ArrayList<Command> of all commands.
+     * @param commands The ArrayList&lt;Command&gt; of all commands.
      * @author Aurel Ballin
      */
     public CommandHandler(Command command, ArrayList<Command> commands) {
@@ -26,9 +26,9 @@ public class CommandHandler implements MessageCreateListener {
      /**
      * This method is called every time a message is created.
      * @param event The event that occurs each time.
-     * @see {@link MessageCreateListener}
      * @author Aurel Ballin
      * @author Jeffrey Morris
+     * @see org.javacord.api.listener.message.MessageCreateListener
      */
     public void onMessageCreate(MessageCreateEvent event) {
 
