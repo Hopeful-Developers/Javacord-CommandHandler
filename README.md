@@ -1,7 +1,5 @@
 # Javacord Command Handler
 
-An easy to use, and beginner friendly command handler for Javacord discord bots.
-
 ## Basic Usage
 The following example is a very simple bot that uses the command handler to activate the ping command.
 ```java
@@ -36,13 +34,11 @@ More introcate examples are shown in the documentation [here](daflamingfox.githu
 ## Download / Installation
 The recommended way to use the command handler is with a build manager such as maven; although it is offered as a jar file.
 
+![version number](https://img.shields.io/github/v/release/DAflamingFOX/Javacord-CommandHandler?label=VERSION%20-%3E&style=flat-square)
 ```xml
 <dependency>
   <groupId>io.github.daflamingfox</groupId>
   <artifactId>javacord-commandhandler</artifactId>
-  <version>v1.0.4-SNAPSHOT</version>
+  <version>VERSION</version>
 </dependency>
 ```
-
-
-
