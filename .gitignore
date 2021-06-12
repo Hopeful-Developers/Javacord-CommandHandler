@@ -12,3 +12,6 @@ buildNumber.properties
 setting.xml
 .vscode
 settings.xml
+docs/
+javadoc/
+.gradle/
