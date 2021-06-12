@@ -102,5 +102,10 @@ public class Command {
         return this.aliases; 
     }
 
+    @Override
+    public final String toString() {
+        return getPrefix()+getCommandInitiator();
+    }
+
 }
 
