@@ -16,7 +16,7 @@ public class Main {
     }
 }
 
-pubic class Ping() implements IExecutor{
+pubic class Ping implements IExecutor{
     public void execute(CommandData data, ArrayList<Command> commands) {
         long ping1, ping2, ms;
         ping1 = System.currentTimeMillis();
@@ -29,16 +29,44 @@ pubic class Ping() implements IExecutor{
     }
 }
 ```
-More introcate examples are shown in the documentation [here](daflamingfox.github.io/Javacord-CommandHandler).
 
 ## Download / Installation
-The recommended way to use the command handler is with a build manager such as maven; although it is offered as a jar file.
+[![](https://jitpack.io/v/DAflamingFOX/Javacord-CommandHandler.svg)](https://jitpack.io/#DAflamingFOX/Javacord-CommandHandler)
+To download and use the CommandHandler, we recommend a build manager such as Gradle or Maven.
 
-![version number](https://img.shields.io/github/v/release/DAflamingFOX/Javacord-CommandHandler?label=VERSION%20-%3E&style=flat-square)
+to install using **Maven**:
+* Add the jitpack repo to your pom:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+* Then add the dependency:
 ```xml
 <dependency>
-  <groupId>io.github.daflamingfox</groupId>
-  <artifactId>javacord-commandhandler</artifactId>
-  <version>VERSION</version>
+    <groupId>com.github.DAflamingFOX</groupId>
+    <artifactId>Javacord-CommandHandler</artifactId>
+    <version>v1.0.5</version>
 </dependency>
 ```
+
+to install using **Gradle**:
+* Add the jitpack repo to your build.gradle:
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+* Then add the dependecy:
+```groovy
+dependencies {
+        implementation 'com.github.DAflamingFOX:Javacord-CommandHandler:v1.0.5'
+}
+```
+
