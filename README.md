@@ -16,7 +16,7 @@ public class Main {
     }
 }
 
-pubic class Ping() implements IExecutor{
+pubic class Ping implements IExecutor{
     public void execute(CommandData data, ArrayList<Command> commands) {
         long ping1, ping2, ms;
         ping1 = System.currentTimeMillis();
