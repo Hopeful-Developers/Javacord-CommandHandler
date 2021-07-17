@@ -40,6 +40,20 @@ public class Command {
     }
 
     /**
+     * Used to copy a Command object to another Command object; simply by doing {@code Command command = new Command(oldCommand);}
+     * @param cmd the command to be copied.
+     */
+    public Command(Command cmd) {
+        this.api = cmd.api;
+        this.commandInitiator = cmd.commandInitiator;
+        this.executor = cmd.executor;
+        this.prefix = cmd.prefix;
+        this.description = cmd.description;
+        this.usage = cmd.usage;
+        this.aliases = cmd.aliases;
+    }
+
+    /**
      * 
      * @return The IExecutor.
      * @author Aurel Ballin
