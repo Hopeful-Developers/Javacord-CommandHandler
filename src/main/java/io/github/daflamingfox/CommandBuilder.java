@@ -1,8 +1,12 @@
 package io.github.daflamingfox;
 
-import org.javacord.api.DiscordApi;
-
+import java.awt.Color;
 import java.util.ArrayList;
+
+import org.javacord.api.DiscordApi;
+import org.javacord.api.entity.message.embed.EmbedBuilder;
+import org.javacord.api.listener.message.MessageCreateListener;
+import org.javacord.api.util.event.ListenerManager;
 
 /**
  * @author Aurel Ballin
@@ -13,6 +17,7 @@ public class CommandBuilder {
     private final ArrayList<Command> commands = new ArrayList<>();
     private final String prefix;
     private final DiscordApi api;
+    private ArrayList<ListenerManager<MessageCreateListener>> listenerManagers = new ArrayList<>();
 
     /**
      * Creates a new CommandBuilder Object, allows for setting the prefix.
@@ -47,7 +52,7 @@ public class CommandBuilder {
      * @see io.github.daflamingfox.IExecutor
      */
     public final CommandBuilder addCommand(String commandInitiator, String[] aliases, IExecutor executor, String description, String usage) {
-        Command command = new Command(commandInitiator, aliases, executor, this.api, this.prefix, description == null ? "No description" : description, usage == null ? "No usage" : usage);
+        Command command = new Command(commandInitiator, aliases, executor, this.api, this.prefix, description == null ? "No description" : description, usage == null ? (this.prefix + commandInitiator) : usage);
         this.commands.add(command);
         return this;
     }
@@ -69,7 +74,73 @@ public class CommandBuilder {
      * @author Aurel Ballin
      */
     public final void build() {
-        this.commands.forEach(command -> this.api.addMessageCreateListener(new CommandHandler(command, this.commands)));
+        this.commands.forEach(command -> {
+             listenerManagers.add(this.api.addMessageCreateListener(new CommandHandler(command, this.commands)));
+        });
     }
 
+
+    /**
+     * Default: False
+     * A reload command that can only be called by the bot owner; using {prefix}reload
+     * removes the previous CommandHandler; then rebuilds it.
+     * @param enable
+     */
+    public final CommandBuilder enableReloadCommand()  {
+        api.addMessageCreateListener(event -> {
+            if (event.getMessageAuthor().isBotOwner() && event.getMessageContent().startsWith(this.prefix + "reload")) {
+                listenerManagers.forEach(lm -> lm.remove());
+                build();
+                event.getMessage().reply("Successfully reloaded the CommandHandler.");
+            }
+        });     
+        return this;
+    }
+
+    public final CommandBuilder enableDefaultHelpCommand() {
+        this.addCommand("help", null, new HelpCmd(), "Show a list of all available commands.", (this.prefix + "help"));
+        return this;
+    }
+
+    private class HelpCmd implements IExecutor {
+        
+        private boolean isList; // used for checking if its a list or not;
+
+        public void execute(CommandData data, ArrayList<Command> commands) {
+            String cmdList = makeCommandList(commands, data.getCommandMessage().getArgs());
+
+            // Create embed to send
+            EmbedBuilder embed = new EmbedBuilder().setTitle("Help").setColor(Color.WHITE).setTimestampToNow();
+
+            // checks if it's a list or specific command.
+            if(isList) {
+                embed.setDescription("List of all available commands.");
+                embed.addField("Command(s):", cmdList, false);
+                embed.addField("Need command usage?", "Type `"+prefix+"help[command_name]`.", false);
+            } else {
+                embed.addField("Usage:", cmdList, false);
+                embed.addField("Want to see all commands?", "Type "+prefix+"help", false);
+            }
+
+            // send the message
+            data.getChannel().sendMessage(embed);
+        }
+
+        private String makeCommandList(ArrayList<Command> commands, ArrayList<String> args) {
+            String string = "";
+            
+            // Add all commands to a list.
+            for (Command command : commands) {
+                // checks for needing help on specific command, if not make list
+                if (args.isEmpty()) {
+                    string += "`" + command.getPrefix() + command.getCommandInitiator() + "` - " + command.getDescription() + "\n";
+                } else if (command.getCommandInitiator().equals(args.get(0))) {
+                    isList = false;
+                    return "`" + command.getUsage() + "`";
+                }
+            }
+            isList = true;
+            return string;
+        }
+    }
 }
